@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap");
+
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Rubik", sans-serif;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: none;
+}
+
+/* app */
+body {
+  min-height: 100vh;
+  color: white;
+  background-color: #0b0613;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+}
+
+.container {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.form {
+  width: min(100%, 760px);
+  margin: 0 auto 1.4rem;
+  display: flex;
+  gap: 0.65rem;
+  align-items: stretch;
+}
+
+.form__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  padding: 1rem 1rem;
+  font-size: 1rem;
+  color: #2d2d2d;
+  background: #f2f2f2;
+}
+
+.form__input::placeholder {
+  color: #6f6f6f;
+}
+
+.form__input:focus {
+  background: #ffffff;
+}
+
+.form__button {
+  background: linear-gradient(180deg, #8a19ff 0%, #5b00c7 100%);
+  color: white;
+  padding: 0 1.1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.form__button:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.todos {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.todo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.todo__text {
+  font-size: clamp(1.2rem, 2vw, 1.35rem);
+  font-weight: 500;
+  color: #ffffff;
+  word-break: break-word;
+}
+
+.mutations {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-shrink: 0;
+}
+
+.todo__status,
+.todo__delete {
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.9rem;
+  line-height: 1;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.todo__status:hover,
+.todo__delete:hover {
+  transform: scale(1.12);
+  opacity: 0.9;
+}
+
+/* MOBILE (phones) */
+@media (max-width: 420px) {
+  .title {
+    font-size: 2.3rem;
+    padding-top: 1.5rem;
+  }
+
+  .form {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form__input {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .form__button {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  .todos {
+    width: 100%;
+  }
+
+  .todo {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .todo__text {
+    font-size: 1rem;
+  }
+
+  .todo__status,
+  .todo__delete {
+    font-size: 1.4rem;
+  }
+}
