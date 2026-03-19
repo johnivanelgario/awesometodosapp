@@ -19,19 +19,15 @@ app.use((req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 10000;
 
-const startServer = async () => {
+app.listen(port, "0.0.0.0", async () => {
+  console.log(`Server is listening on port ${port}`);
+
   try {
     await connectToMongoDB();
-
-    app.listen(port, "0.0.0.0", () => {
-      console.log(`Server is listening on port ${port}`);
-    });
+    console.log("Connected to MongoDB");
   } catch (error) {
-    console.error("Failed to start server:", error);
-    process.exit(1);
+    console.error("MongoDB connection failed:", error);
   }
-};
-
-startServer();
+});
