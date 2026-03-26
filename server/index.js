@@ -11,12 +11,12 @@ app.use(express.json());
 const router = require("./routes");
 app.use("/api", router);
 
-// Serve frontend files
-app.use(express.static(path.join(__dirname, "../client/dist")));
+// Serve frontend files from server/dist
+app.use(express.static(path.join(__dirname, "dist")));
 
 // Fallback for frontend routes
 app.use((req, res) => {
-  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 const port = process.env.PORT || 10000;
